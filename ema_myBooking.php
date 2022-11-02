@@ -1,141 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyBooking</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBooking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
 
-<body>
-  <?php
-  $name = 'apanih';
-  $date = $_POST['Date'];
-  $start = $_POST['Start'];
-  $duration = $_POST['Duration'];
-  $type = $_POST['Type'];
-  $phone = $_POST['Phone'];
-  ?>
+  <body>
+    <?php
+    $name = 'apanih';
+    $date = $_POST['Date'];
+    $start = $_POST['Start'];
+    $duration = $_POST['Duration'];
+    $type = $_POST['Type'];
+    $phone = $_POST['Phone'];
+    ?>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container d-flex justify-content-center">
-      <ul class="navbar-nav">
-        <li class=" nav-item">
-          <a class="nav-link" href="ema_home.php">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ema_booking.php">Booking</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container d-flex justify-content-center">
+        <ul class="navbar-nav">
+          <li class=" nav-item">
+            <a class="nav-link" href="ema_home.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ema_booking.php">Booking</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-  <div class="container">
-    <br>
-    <h4 align="center">Thank you <?php echo $name . " " ?> for Reserving</h4>
-    <p align="center">Please double check your reservation details</p>
-    <table class="table">
-      <tr>
-        <td>
-          <b>Booking Number</b>
-        </td>
-        <td>
-          <b>Nama</b>
-        </td>
-        <td>
-          <b>Check-In</b>
-        </td>
-        <td>
-          <b>Check-Out</b>
-        </td>
-        <td>
-          <b>Car Type</b>
-        </td>
-        <td>
-          <b>Phone Number</b>
-        </td>
-        <td>
-          <b>Service</b>
-        </td>
-        <td>
-          <b>Total Price</b>
-        </td>
-      </tr>
+    <div class="container">
+      <br>
+      <h4 align="center">Thank you <?php echo $name . " " ?> for Reserving</h4>
+      <p align="center">Please double check your reservation details</p>
+      <table class="table">
+        <tr>
+          <td>
+            <b>Booking Number</b>
+          </td>
+          <td>
+            <b>Nama</b>
+          </td>
+          <td>
+            <b>Check-In</b>
+          </td>
+          <td>
+            <b>Check-Out</b>
+          </td>
+          <td>
+            <b>Car Type</b>
+          </td>
+          <td>
+            <b>Phone Number</b>
+          </td>
+          <td>
+            <b>Service</b>
+          </td>
+          <td>
+            <b>Total Price</b>
+          </td>
+        </tr>
 
-      <tr class="bg-light">
-        <td>
-          <?php
-          echo rand();
-          ?>
-        </td>
-        <td>
-          <?php echo $name ?> <br>
-        </td>
-        <td>
-          <?php
-          $date = $date . " " . $start;
-          $datestart = date("d-m-Y H:i:s", strtotime($date));
-          echo $datestart
-          ?>
-        </td>
-        <td>
-          <?php
-          echo date("d-m-Y H:i:s", (strtotime($date) + 60 * 60 * 24 * $duration)) ?>
-        </td>
-        <td>
-          <?php echo $type ?> <br>
-        </td>
-        <td>
-          <?php echo $phone ?> <br>
-        </td>
-        <td>
-          <?php
-          if (is_iterable($_POST["checkbox"])) {
-            foreach () {
-              echo "<li>$checkbox</li>";
+        <tr class="bg-light">
+          <td>
+            <?php
+            echo rand();
+            ?>
+          </td>
+          <td>
+            <?php echo $name ?> <br>
+          </td>
+          <td>
+            <?php
+            $date = $date . " " . $start;
+            $datestart = date("d-m-Y H:i:s", strtotime($date));
+            echo $datestart
+            ?>
+          </td>
+          <td>
+            <?php
+            echo date("d-m-Y H:i:s", (strtotime($date) + 60 * 60 * 24 * $duration)) ?>
+          </td>
+          <td>
+            <?php echo $type ?> <br>
+          </td>
+          <td>
+            <?php echo $phone ?> <br>
+          </td>
+          <td>
+            <?php
+            if (is_iterable($_POST["checkbox"])) {
+              foreach () {
+                echo "<li>$checkbox</li>";
+              }
+            } else {
+              echo "no service";
             }
-          } else {
-            echo "no service";
-          }
-          ?>
-        </td>
-        <td>
-          <?php
-          $price = 0;
-          if ($type == "Toyota Rush") {
-            $price = 200000;
-          } else if ($type = "Toyota Ayla") {
-            $price = 150000;
-          } else {
-            $price = 150000;
-          }
+            ?>
+          </td>
+          <td>
+            <?php
+            $price = 0;
+            if ($type == "Toyota Rush") {
+              $price = 200000;
+            } else if ($type = "Toyota Ayla") {
+              $price = 150000;
+            } else {
+              $price = 150000;
+            }
 
-          $price = $price * $duration;
-          if (is_iterable($_POST['checkbox'])) {
-            foreach ($_POST['checkbox'] as $checkbox) {
-              if ($checkbox == "Health Protocol") {
-                $price += 25000;
-              } else if ($checkbox == "Driver") {
-                $price += 100000;
-              } else if ($checkbox == "Fuel Filled") {
-                $price += 250000;
+            $price = $price * $duration;
+            if (is_iterable($_POST['checkbox'])) {
+              foreach ($_POST['checkbox'] as $checkbox) {
+                if ($checkbox == "Health Protocol") {
+                  $price += 25000;
+                } else if ($checkbox == "Driver") {
+                  $price += 100000;
+                } else if ($checkbox == "Fuel Filled") {
+                  $price += 250000;
+                }
               }
             }
-          }
-          echo "Rp. " . $price;
-          ?>
-        </td>
-      </tr>
-    </table>
+            echo "Rp. " . $price;
+            ?>
+          </td>
+        </tr>
+      </table>
 
 
-  </div>
-  <footer align="center" class="fixed-bottom bg-light p-2">
-    <p>Ema_1202200150</p>
-  </footer>
+    </div>
+    <footer align="center" class="fixed-bottom bg-light p-2">
+      <p>Ema_1202200150</p>
+    </footer>
 
-</body>
+  </body>
 
-</html>
+  </html>
