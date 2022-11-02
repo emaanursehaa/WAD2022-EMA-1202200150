@@ -11,7 +11,7 @@
 
 <body>
   <?php
-  $name = $_POST['Name'];
+  $name = 'apanih';
   $date = $_POST['Date'];
   $start = $_POST['Start'];
   $duration = $_POST['Duration'];
@@ -93,7 +93,7 @@
         <td>
           <?php
           if (is_iterable($_POST["checkbox"])) {
-            foreach ($_POST["checkbox"] as $checkbox) {
+            foreach () {
               echo "<li>$checkbox</li>";
             }
           } else {

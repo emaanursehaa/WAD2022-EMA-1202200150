@@ -41,7 +41,7 @@
 
       <div class="col mb-3">
         <br>
-        <form action="ema_myBooking.php" method="post">
+        <form action="" method="">
           <div class="mb-3">
             <label for="Nama">Name</label>
             <input type="text" class="form-control bg-light" id="Name" readonly="readonly" value="Ema_1202200150" name="Name" required>
