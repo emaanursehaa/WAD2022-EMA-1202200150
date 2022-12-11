@@ -16,7 +16,7 @@
     if (mysqli_query()) {
       header("location: ../pages/ListCar-Ema.php?pesan=succes");
     } else {
-      header("location: ../pages/ListCar-Ema.php?pesan=failed");
+      header("location: ../pages/ListCar-Ema.php?pesan=failed"); 
     }
   } else {
     header("location: ../pages/ListCar-Ema.php?pesan=failed");

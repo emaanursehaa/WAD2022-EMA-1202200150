@@ -1,5 +1,6 @@
   <?php
   require './config/connector.php';
+  session_start();
 
   $query = "SELECT * FROM showroom_ema_table";
   $result = mysqli_query($koneksi, $query);

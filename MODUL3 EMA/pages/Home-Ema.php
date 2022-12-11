@@ -16,7 +16,7 @@
   require './config/connector.php';
 
   $query = "SELECT * FROM showroom_ema_table";
-  $result = mysqli_query($conn, $query);
+  $result = mysqli_query($conn, $query); 
 
   ?>
   <nav class="navbar navbar-expand-lg bg-primary">

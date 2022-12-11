@@ -28,6 +28,6 @@ if ("SELECT foto_mobil FROM showroom_ema_table WHERE id_mobil = $id" != 0) {
   if (mysqli_query($conn, $editquery)) {
     header("location: ../pages/ListCar-Ema.php?pesan=update");
   } else {
-    header("location: ../pages/ListCar-Ema.php?pesan=failed");
+    header("location: ../pages/ListCar-Ema.php?pesan=failed"); 
   }
 }
